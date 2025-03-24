@@ -2,20 +2,16 @@
 
 using namespace std;
 
-int a[10];
-vector<int> A;
-
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     cout.tie(nullptr);
-    string n;
-    cin >> n;
-
-    for (int i = n.size() - 1; i >= 0; i--) A.push_back(n[i] - '0');
-    for (int i: A) a[i]++;
-    for (int i = 0; i < 10; i++) {
-        if (a[i]) cout << i << ":" << a[i] << endl;
+    map<int, int> mp;
+    string s;
+    cin >> s;
+    for (int i = s.size() - 1; i >= 0; i--) mp[s[i] - '0'] ++;
+    for (auto & i : mp) {
+        cout << i.first << ":" << i.second << endl;
     }
     return 0;
 }

@@ -6,15 +6,13 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     cout.tie(nullptr);
-
-    int sum, number;
-    cin >> sum >> number;
-    double l = 0, r = 15;
-    while (r - l > 1e-2) {
-        double mid = (l + r) / 2;
-        if (number * mid < sum) l = mid;
-        else r = mid;
-    }
-    cout << l << endl;
+    int a[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    cout << *lower_bound(a, a + 10, 2) << endl;
+    cout << *upper_bound(a, a + 10, 2) << endl;
+    vector<int> b = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    cout << *b.begin() << endl;
+    cout << *b.rbegin() << endl;
+    cout << *lower_bound(b.begin(), b.end(), 2) << endl;
+    cout << *upper_bound(b.begin(), b.end(), 2) << endl;
     return 0;
 }
